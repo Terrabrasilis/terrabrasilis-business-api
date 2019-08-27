@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "efb16c96-649d-4281-a2e4-25372eef12ff",
+		"name": "business-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/datasource/batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n\t    \"name\": \"IMAFLORA\",\n\t    \"description\": \"IMAFLORA Geospatial Data Server\",\n\t    \"host\": \"http://geoserver.imaflora.org/geoserver/ima-geo/ows\",\n\t    \"type\": \"OWS\",\n\t    \"metadata\": \"\",\n\t    \"enabled\": true\n    }\n]"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/datasource/batch",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"datasource",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t    \"name\": \"Limite Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile do limite do Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/prodes-cerrado/limite_cerrado.zip\",\n\t    \"enabled\": true\n\t},\n\t{\n\t    \"name\": \"Deter Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile de alertas no Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/deter-cerrado/deter-cerrado_all.zip\",\n\t    \"enabled\": true\n\t},\n\t{\n\t    \"name\": \"Municípios Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile dos municípios do Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/prodes-cerrado/municipio_cerrado.zip\",\n\t    \"enabled\": true\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/all",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"download",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t    \"name\": \"Limite Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile do limite do Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/prodes-cerrado/limite_cerrado.zip\",\n\t    \"enabled\": true\n\t},\n\t{\n\t    \"name\": \"Deter Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile de alertas no Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/deter-cerrado/deter-cerrado_all.zip\",\n\t    \"enabled\": true\n\t},\n\t{\n\t    \"name\": \"Municípios Cerrado\",\n\t    \"description\": \"Arquivo completo em formato shapefile dos municípios do Cerrado.\",\n\t    \"link\": \"http://terrabrasilis.dpi.inpe.br/download/prodes-cerrado/municipio_cerrado.zip\",\n\t    \"enabled\": true\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/batch",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"download",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5c65c03fc4267d0001284325\",\n\t\"tools\": [\n\t\t{\n\t\t\t\"id\": \"5c5d6293c4267d000128431e\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5c5476e9e16438142572c47f\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5c5d6293c4267d000128431f\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer/5c49f7391a21020001cd663e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer/5c49f7391a21020001cd663e",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer",
+						"5c49f7391a21020001cd663e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/tool/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/tool/all",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"tool",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5c810a980cf423000144ebd9\",\n\t\"dashboard\": \"http://terrabrasilis.dpi.inpe.br/dashboard/alerts/biomes/amazon/daily\",\n\t\"metadata\": \"http://terrabrasilis.dpi.inpe.br/geonetwork/srv/eng/catalog.search#/metadata/f2153c4a-915b-48a6-8658-963bdce7366c\",\n\t\"tools\": [\n\t\t{\n\t\t\t\"id\": \"5c5d6293c4267d0001284321\"\n\t\t}\t\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5c65c03fc4267d0001284325\",\n\t\"downloads\": [\n\t\t{\n\t\t\t\"id\": \"5c8acd8ac88eaf000187b041\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t    \"name\": \"PRODES\",\n\t    \"description\": \"Dados do Sistema de Monitoramento do Desmatamento na Amazônia Legal\",\n\t    \"link\": \"http://www.dpi.inpe.br/prodesdigital/dadosn/\",\n\t    \"enabled\": true\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/download/batch",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"download",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/vision",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5c40fdce0e9b2a14264e03a6\",\n\t\"downloads\": [\n\t\t{\n\t\t\t\"id\": \"5ca35eef9ccad70001ffd8b3\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/vision",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"vision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"yearly_deforestation_2013_2018_biome\",\n    \"title\": \"Amazon Biome Yearly Deforestation - 2013/2018\",\n    \"description\": \"Amazon Biome Yearly Deforestation - 2013/2018\",\n    \"attribution\": \"\",\n    \"workspace\": \"prodes-amz\",\n    \"metadata\": \"http://terrabrasilis.dpi.inpe.br/geonetwork/srv/eng/catalog.search#/metadata/b75b83db-8026-43f9-9537-ee1dfa308158\",\n    \"capabilitiesUrl\": \"REQUEST=GetCapabilities&VERSION=1.3.0&SERVICE=wms\",\n    \"stackOrder\": 7,\n    \"opacity\": 1,\n    \"baselayer\": false,\n    \"active\": false,\n    \"enabled\": true,\n    \"timeDimension\": true,\n    \"datasource\": {\n        \"id\": \"5c9923e96d00c5383fbc6552\"\n    },\n    \"tools\": [\n        {\n            \"id\": \"5c5d6293c4267d000128431d\"\n        },\n        {\n            \"id\": \"5c5dc4a1c4267d0001284323\"\n        },\n        {\n            \"id\": \"5c5d6293c4267d0001284320\"\n        },\n        {\n            \"id\": \"5c5476e9e16438142572c47f\"\n        },\n        {\n            \"id\": \"5c5d6293c4267d000128431f\"\n        },\n        {\n            \"id\": \"5c5d6293c4267d000128431e\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/vision-to-vision",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"root\": {\n\t\t\"id\": \"5c40fda10e9b2a14264e03a5\"\t\n\t},\n\t\"visions\": [\n\t\t{\n\t\t\t\"id\": \"5c9bd04ae2e106099a3fd5ee\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/vision-to-vision",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"vision-to-vision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5c9bcf646d9f9d00010068c6\",\n\t\"tools\": [\n\t\t{\n\t\t\t\"id\": \"5c5d6293c4267d0001284321\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://terrabrasilis.dpi.inpe.br/business/api/v1/layer",
+					"protocol": "http",
+					"host": [
+						"terrabrasilis",
+						"dpi",
+						"inpe",
+						"br"
+					],
+					"path": [
+						"business",
+						"api",
+						"v1",
+						"layer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
