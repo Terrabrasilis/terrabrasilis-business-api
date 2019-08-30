@@ -1,6 +1,10 @@
 # For generate an image
 
 - Change the image version into pom.xml
+- Check the application-docker.properties and adjust the connection string if needed;
+ > To use in homologation mode mongodb://mongodbhomologation:27017/businessapi
+ 
+ > To use in production mode mongodb://mongodb:27017/businessapi
 - Use the build-image.sh script
 
 # For run homologation
