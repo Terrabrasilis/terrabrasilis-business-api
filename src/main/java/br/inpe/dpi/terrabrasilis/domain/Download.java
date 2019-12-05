@@ -26,6 +26,7 @@ public final class Download implements Serializable {
 	private String name;
 	private String description;
 	private String link;
+	private String metadata;
 	private String lang;
 	private String category;
 	private boolean enabled;
@@ -50,6 +51,14 @@ public final class Download implements Serializable {
 
 	public String getLink() {
 		return link;
+	}
+
+	public String getMetadata() {
+		return metadata;
+	}
+
+	public void setMetadata(String metadata) {
+		this.metadata = metadata;
 	}
 
 	public String getLang() {
@@ -91,6 +100,7 @@ public final class Download implements Serializable {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Download [id=").append(id).append(", name=").append(name).append(", description=")
 				.append(description).append(", link=").append(link).append(", lang=").append(lang).append(", enabled=").append(enabled)
+				.append(", metadata=").append(metadata)
 				.append(", created=").append(created).append("]");
 		return builder.toString();
 	}
