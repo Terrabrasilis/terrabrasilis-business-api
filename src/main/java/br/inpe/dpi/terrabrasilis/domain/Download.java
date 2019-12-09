@@ -22,7 +22,7 @@ public final class Download implements Serializable {
 	
 	@Id
 	private String id;
-	@Indexed(unique = true)
+	//@Indexed(unique = true)
 	private String name;
 	private String description;
 	private String link;
