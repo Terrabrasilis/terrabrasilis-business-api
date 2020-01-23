@@ -3,11 +3,11 @@
 # URL for homologation instance
 export_host="terrabrasilis2.dpi.inpe.br:30046"
 # URL for production instance
-#import_host="terrabrasilis2.dpi.inpe.br:30046"
+import_host="terrabrasilis2.dpi.inpe.br:30043"
 
 # url for local instance
 #export_host="localhost:27018"
-import_host="localhost:27018"
+#import_host="localhost:27018"
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Export
