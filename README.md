@@ -1,3 +1,7 @@
+## Building
+
+For building instruction take a look at docker folder README.md
+
 ## Templates to tests
 
 #### API Documentation
