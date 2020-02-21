@@ -1,3 +1,8 @@
+# Dependencies
+
+ To build this project, it's required to have docker-ce installed and configured.
+ For instruction on how to install it, take a look at https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 # For generate an image
 
 - Change the image version into pom.xml
