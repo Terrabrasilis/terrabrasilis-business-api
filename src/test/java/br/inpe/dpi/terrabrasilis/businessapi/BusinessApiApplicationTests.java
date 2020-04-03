@@ -24,8 +24,8 @@ public class BusinessApiApplicationTests {
 	private WebClient client;
 	private final String visionPath = "/" + API + V1 + VISION; 
 
-	public BusinessApiApplicationTests(WebClient client) {
-		this.client = client;
+	public BusinessApiApplicationTests() {
+		this.client = WebClient.create();
 	}
 
 	@Test
