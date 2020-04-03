@@ -27,6 +27,7 @@ public class Layer implements Serializable {
 	private String id;
 	//@Indexed(unique = true)
 	private String name;
+	private String nameAuthenticated;
 	private String title;
 	private String description;
 	private String attribution;
@@ -73,6 +74,13 @@ public class Layer implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setNameAuthenticated(String nameAuthenticated) {
+		this.nameAuthenticated = nameAuthenticated;
+	}
+	public String getNameAuthenticated() {
+		return nameAuthenticated;
 	}
 
 	public String getTitle() {
