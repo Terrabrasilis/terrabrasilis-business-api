@@ -6,8 +6,8 @@
 #import_host="terrabrasilis2.dpi.inpe.br:30046"
 
 # url for local instance
-export_host="localhost:27018"
-import_host="localhost:27017"
+export_host="localhost:27017"
+import_host="localhost:27018"
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Export
