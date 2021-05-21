@@ -7,15 +7,15 @@
 
 # url for local instance
 export_host="localhost:27017"
-import_host="localhost:27018"
+import_host="localhost:27017"
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Export
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # bkp-collections is data from server
-#WORK_DIR="bkp-collections"
+WORK_DIR="bkp-collections"
 # bkp-collections-local is data from localhost
-WORK_DIR="bkp-collections-local"
+#WORK_DIR="bkp-collections-local"
 
 if [[ "$1" = "export" ]]; then
     echo "Remove old files in $WORK_DIR..."
