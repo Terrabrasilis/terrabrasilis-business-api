@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.inpe.dpi.terrabrasilis</groupId>
 	<artifactId>business-api</artifactId>
-	<version>v1.2.2</version>
+	<version>v1.2.3</version>
 	<name>business-api</name>
 	<description>Business API delivery the data to mount the visions in Terrabrasilis application</description>
 
