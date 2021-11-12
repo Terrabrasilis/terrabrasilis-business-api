@@ -1,6 +1,9 @@
 FROM openjdk:8-jdk-alpine
 
 LABEL Jether Rodrigues<jetherrodrigues@gmail.com>
+LABEL Andre Carvalho<andre.carvalho@inpe.br>
+
+RUN apk add --no-cache curl
 
 VOLUME /tmp
 
