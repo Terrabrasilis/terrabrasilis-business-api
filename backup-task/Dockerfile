@@ -30,8 +30,4 @@ RUN chmod +x ${INSTALL_PATH}/*.sh \
 
 VOLUME ["${INSTALL_PATH}/data"]
 
-WORKDIR ${INSTALL_PATH}
-
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
-
-#CMD crond -l 2 -f

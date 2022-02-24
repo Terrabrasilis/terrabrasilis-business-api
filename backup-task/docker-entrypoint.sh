@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ## THE ENV VARS ARE NOT READED INSIDE A SHELL SCRIPT THAT RUNS IN CRON TASKS.
 ## SO, WE WRITE INSIDE THE /etc/environment FILE AND READS BEFORE RUN THE SCRIPT.
 echo "export MONGO_HOST=\"$MONGO_HOST\"" >> /etc/environment
