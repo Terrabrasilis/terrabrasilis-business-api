@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+45 23 * * * * /usr/local/cron_exec.sh >> /usr/local/data/cron_exec.log 
