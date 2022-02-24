@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
+
 # url to read data, input data source.
 export_host="${MONGO_HOST}:${MONGO_PORT}"
-WORK_DIR="data"
+WORK_DIR="${INSTALL_PATH}/data"
 
 echo "exporting collections from production"
 ## download
@@ -28,7 +29,7 @@ mongoexport --host ${export_host} --db ${MONGO_DB} --collection vision_to_vision
 DT=$(date '+%Y-%m-%d')
 # ZIP all JSON
 echo "ZIP all JSONs to mongodb-collections-bkp-${DT}.zip"
-zip -9 -j "${WORK_DIR}/mongodb-collections-bkp-${DT}.zip" "${WORK_DIR}/*.json"
+zip -9 -j ${WORK_DIR}/mongodb-collections-bkp-${DT}.zip ${WORK_DIR}/*.json
 
 echo "Remove all JSONs"
-rm "${WORK_DIR}/*.json"
+rm ${WORK_DIR}/*.json

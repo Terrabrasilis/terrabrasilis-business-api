@@ -6,11 +6,10 @@ LABEL author="Andre Carvalho"
 LABEL author.email="andre.carvalho@inpe.br"
 LABEL description="This image provides a background task to run daily MongoDB backup."
 
-RUN apk update \
-    && apk add --no-cache --update \
+RUN apk add --no-cache \
     mongodb-tools \
     tzdata \
-    && rm -rf /var/cache/apk/*
+    zip
 
 # define the timezone to run cron
 ENV TZ=America/Sao_Paulo
