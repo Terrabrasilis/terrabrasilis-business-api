@@ -22,7 +22,7 @@ if [[ "$1" = "export" ]]; then
     rm $WORK_DIR/*.json
     echo "exporting collections from production"
     ## download
-    mongoexport --host $export_host --db businessapi --collection download --sort '{name:1,lang:1,created:1}' --out $WORK_DIR/download.json
+    mongoexport --host $export_host --db businessapi --collection download --sort '{category:1,name:1,lang:1,created:1}' --out $WORK_DIR/download.json
 
     ## tool
     mongoexport --host $export_host --db businessapi --collection tool --sort '{name:1,created:1}' --out $WORK_DIR/tool.json
@@ -34,7 +34,7 @@ if [[ "$1" = "export" ]]; then
     mongoexport --host $export_host --db businessapi --collection subdomain --sort '{name:1,created:1}' --out $WORK_DIR/subdomain.json
 
     ## layer
-    mongoexport --host $export_host --db businessapi --collection layer --sort '{name:1,workspace:1,created:1}' --out $WORK_DIR/layer.json
+    mongoexport --host $export_host --db businessapi --collection layer --sort '{workspace:1,name:1,created:1}' --out $WORK_DIR/layer.json
 
     ## vision
     mongoexport --host $export_host --db businessapi --collection vision --sort '{name:1,created:1}' --out $WORK_DIR/vision.json
