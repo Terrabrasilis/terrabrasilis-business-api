@@ -1,2 +1,0 @@
-# m h  dom mon dow   command
-45 23 * * * /usr/local/cron_exec.sh >> /usr/local/data/cron_exec_$(date '+%Y-%m-%d').log 2>&1
