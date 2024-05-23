@@ -41,6 +41,10 @@ public class Layer implements Serializable {
 	private boolean baselayer;
 	private boolean active;
 	private boolean enabled;
+	private String styleName;
+	private String styleNameAuthenticated;
+	private boolean external;
+	private String type;		
 	private boolean timeDimension;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime created;
@@ -187,16 +191,14 @@ public class Layer implements Serializable {
 		this.metadata = metadata;
 	}
 
-        public String getDashboard() {
-            return dashboard;
-        }
+	public String getDashboard() {
+		return dashboard;
+	}
 
-        public void setDashboard(String dashboard) {
-            this.dashboard = dashboard;
-        }
-        
-        
-
+	public void setDashboard(String dashboard) {
+		this.dashboard = dashboard;
+	}
+	
 	public List<Subdomain> getSubdomains() {
 		return this.subdomains == null ? Collections.emptyList() : Collections.unmodifiableList(this.subdomains);
 	}
@@ -231,6 +233,69 @@ public class Layer implements Serializable {
 
 	public boolean isAggregatable() {
 		return this.aggregatable;
+	}
+
+	public boolean getBaselayer() {
+		return this.baselayer;
+	}
+
+
+	public boolean getActive() {
+		return this.active;
+	}
+
+
+	public boolean getEnabled() {
+		return this.enabled;
+	}
+
+
+	public String getStyleName() {
+		return this.styleName;
+	}
+
+	public void setStyleName(String styleName) {
+		this.styleName = styleName;
+	}
+
+	public String getStyleNameAuthenticated() {
+		return this.styleNameAuthenticated;
+	}
+
+	public void setStyleNameAuthenticated(String styleNameAuthenticated) {
+		this.styleNameAuthenticated = styleNameAuthenticated;
+	}
+
+	public boolean isExternal() {
+		return this.external;
+	}
+
+	public boolean getExternal() {
+		return this.external;
+	}
+
+	public void setExternal(boolean external) {
+		this.external = external;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public boolean isTimeDimension() {
+		return this.timeDimension;
+	}
+
+	public boolean getAggregatable() {
+		return this.aggregatable;
+	}
+
+	public void setAggregatable(boolean aggregatable) {
+		this.aggregatable = aggregatable;
 	}
 
 	@Override
