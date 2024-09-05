@@ -9,7 +9,9 @@ echo ""
 
 ver=$1
 btype=$2
-IMAGE="terrabrasilis/business-api"
+PROJECT="business-api"
+NAMESPACE="terrabrasilis"
+IMAGE="$NAMESPACE/$PROJECT"
 
 # get version number to build image
 if [[ ! "$ver" = "" && ! "$ver" = "staging" && ! "$ver" = "production" ]]; then
@@ -29,6 +31,15 @@ else
     fi
 fi
 
+JAR_FILE="target/$PROJECT-$VERSION.jar"
+
+echo ""
+echo "Building File $JAR_FILE"
+echo "...................................................."
+
+./mvnw install -DskipTests
+
+echo ""
 echo "Building $IMAGE:$VERSION"
 echo "...................................................."
 
@@ -58,7 +69,7 @@ echo "Building $BUILD_TYPE mode..."
 echo "........................"
 
 # --no-cache
-docker build --build-arg ENV=$ENV --build-arg BUILD_TYPE=$BUILD_TYPE -t $IMAGE:$VERSION -f Dockerfile .
+docker build --build-arg ENV=$ENV --build-arg JAR_FILE=$JAR_FILE  --build-arg BUILD_TYPE=$BUILD_TYPE -t $IMAGE:$VERSION -f Dockerfile .
 
 echo "The building was finished! Do you want sending this new image to Docker HUB? Type yes to continue." ; read SEND_TO_HUB
 if [[ ! "$SEND_TO_HUB" = "yes" ]]; then
