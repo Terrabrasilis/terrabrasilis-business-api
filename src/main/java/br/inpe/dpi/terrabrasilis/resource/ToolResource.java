@@ -5,24 +5,16 @@ import static br.inpe.dpi.terrabrasilis.util.Constants.TOOL;
 import static br.inpe.dpi.terrabrasilis.util.Constants.V1;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.inpe.dpi.terrabrasilis.domain.Tool;
-import br.inpe.dpi.terrabrasilis.exception.ToolAlreadyExistsException;
 import br.inpe.dpi.terrabrasilis.service.ToolService;
-import br.inpe.dpi.terrabrasilis.util.HeaderUtil;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 /**
@@ -55,7 +47,7 @@ public class ToolResource implements Serializable {
 		return toolService.findById(id);
 	}
 	
-	@PostMapping
+	/*@PostMapping
 	public ResponseEntity<Mono<Tool>> createNewTool(@Valid @RequestBody Tool tool) {
 		logger.debug("REST request to save Tool : {}", tool);
 		
@@ -68,7 +60,7 @@ public class ToolResource implements Serializable {
 		return ResponseEntity.ok()
 				.headers(HeaderUtil.createEntityCreationAlert("Tool", ""))
 				.body(created);
-	}
+	}*/
 	
 	/**
 	 * POST  /batch : register the tool from list of Tool.
@@ -77,7 +69,7 @@ public class ToolResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PostMapping("/batch")
+	/*@PostMapping("/batch")
 	public ResponseEntity<?> createInBatch(@Valid @RequestBody List<Tool> tools) {
 		logger.debug("REST request to save Tool from list: {}", tools);
 		
@@ -87,5 +79,5 @@ public class ToolResource implements Serializable {
 				.headers(HeaderUtil.createEntityCreationAlert("Datasource", ""))
 				.body(created
 						.subscribe(System.out::println));
-	}
+	}*/
 }

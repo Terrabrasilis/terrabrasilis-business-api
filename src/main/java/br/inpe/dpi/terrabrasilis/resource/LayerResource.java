@@ -5,38 +5,18 @@ import static br.inpe.dpi.terrabrasilis.util.Constants.LAYER;
 import static br.inpe.dpi.terrabrasilis.util.Constants.V1;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.inpe.dpi.terrabrasilis.domain.Datasource;
-import br.inpe.dpi.terrabrasilis.domain.Download;
 import br.inpe.dpi.terrabrasilis.domain.Layer;
-import br.inpe.dpi.terrabrasilis.domain.Subdomain;
-import br.inpe.dpi.terrabrasilis.domain.Tool;
-import br.inpe.dpi.terrabrasilis.exception.LayerAlreadyExistsException;
 import br.inpe.dpi.terrabrasilis.service.DatasourceService;
 import br.inpe.dpi.terrabrasilis.service.LayerService;
 import br.inpe.dpi.terrabrasilis.service.SubdomainService;
-import br.inpe.dpi.terrabrasilis.util.HeaderUtil;
-import one.util.streamex.StreamEx;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 /**
@@ -73,7 +53,7 @@ public class LayerResource implements Serializable {
 		return layerService.findById(id);
 	}
 	
-	@PostMapping
+	/*@PostMapping
 	public ResponseEntity<Mono<Layer>> createNewLayer(@Valid @RequestBody Layer layer) {
 		logger.debug("REST request to save Layer : {}", layer);
 		
@@ -102,7 +82,7 @@ public class LayerResource implements Serializable {
 		return ResponseEntity.ok()
 				.headers(HeaderUtil.createEntityCreationAlert("Layer", ""))
 				.body(created);
-	}
+	}*/
 	
 	/**
 	 * PUT  / : update the Layer object.
@@ -111,7 +91,7 @@ public class LayerResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PutMapping
+	/*@PutMapping
 	public Mono<ResponseEntity<Layer>> updateLayer(@Valid @RequestBody Layer layer) {
 		logger.debug("REST request to update Layer : {}", layer);
 		
@@ -141,5 +121,5 @@ public class LayerResource implements Serializable {
 				})
 				.map(updated -> new ResponseEntity<>(updated, HttpStatus.OK))
 				.defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
+	}*/
 }

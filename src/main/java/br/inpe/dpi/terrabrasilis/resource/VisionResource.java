@@ -1,40 +1,27 @@
 package br.inpe.dpi.terrabrasilis.resource;
 
-import br.inpe.dpi.terrabrasilis.domain.Download;
-import static br.inpe.dpi.terrabrasilis.util.Constants.*;
+import static br.inpe.dpi.terrabrasilis.util.Constants.API;
+import static br.inpe.dpi.terrabrasilis.util.Constants.CACHE_DEFORESTATION;
+import static br.inpe.dpi.terrabrasilis.util.Constants.V1;
+import static br.inpe.dpi.terrabrasilis.util.Constants.VISION;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.inpe.dpi.terrabrasilis.domain.Layer;
-import br.inpe.dpi.terrabrasilis.domain.Tool;
 import br.inpe.dpi.terrabrasilis.domain.Vision;
 import br.inpe.dpi.terrabrasilis.domain.VisionDTO;
-import br.inpe.dpi.terrabrasilis.exception.VisionAlreadyExistsException;
-import br.inpe.dpi.terrabrasilis.exception.VisionBadRequestException;
 import br.inpe.dpi.terrabrasilis.exception.VisionNotFoundException;
 import br.inpe.dpi.terrabrasilis.service.VisionService;
 import br.inpe.dpi.terrabrasilis.service.VisionToVisionService;
-import br.inpe.dpi.terrabrasilis.util.HeaderUtil;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 /**
@@ -92,7 +79,7 @@ public class VisionResource implements Serializable {
 		return visionToVisionService.findByRoot(vision);
 	}
 	
-	@PostMapping
+	/*@PostMapping
         @CachePut(CACHE_DEFORESTATION)
 	public ResponseEntity<Mono<Vision>> createVision(@Valid @RequestBody Vision vision) {
 		logger.debug("REST request to save Vision : {}", vision);
@@ -106,7 +93,7 @@ public class VisionResource implements Serializable {
 		return ResponseEntity.ok()
 				.headers(HeaderUtil.createEntityCreationAlert("Vision", ""))
 				.body(created);
-	}
+	}*/
 
 	/**
 	 * PUT  / : update the Vision object.
@@ -115,7 +102,7 @@ public class VisionResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PutMapping
+	/*@PutMapping
 	@CachePut(CACHE_DEFORESTATION)
 	public Mono<ResponseEntity<Vision>> updateVision(@Valid @RequestBody Vision vision) {
 		logger.debug("REST request to save Vision : {}", vision);
@@ -156,4 +143,5 @@ public class VisionResource implements Serializable {
 				.map(updated -> new ResponseEntity<>(updated, HttpStatus.OK))
 				.defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
+	*/
 }

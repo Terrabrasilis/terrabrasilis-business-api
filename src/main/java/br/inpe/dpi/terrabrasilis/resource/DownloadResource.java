@@ -5,25 +5,17 @@ import static br.inpe.dpi.terrabrasilis.util.Constants.DOWNLOAD;
 import static br.inpe.dpi.terrabrasilis.util.Constants.V1;
 
 import java.io.Serializable;
-import java.util.List;
-
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.inpe.dpi.terrabrasilis.domain.Download;
-import br.inpe.dpi.terrabrasilis.exception.DownloadAlreadyExistsException;
 import br.inpe.dpi.terrabrasilis.service.DownloadService;
-import br.inpe.dpi.terrabrasilis.util.HeaderUtil;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 /**
@@ -57,7 +49,7 @@ public class DownloadResource implements Serializable {
 		return downloadService.findById(id);
 	}
 	
-	@PostMapping
+	/*@PostMapping
 	public ResponseEntity<Mono<Download>> createNewDownload(@Valid @RequestBody Download download) {
 		logger.debug("REST request to save Download : {}", download);
 		
@@ -70,7 +62,7 @@ public class DownloadResource implements Serializable {
 		return ResponseEntity.ok()
 				.headers(HeaderUtil.createEntityCreationAlert("Download", ""))
 				.body(created);
-	}
+	}*/
 	
 	/**
 	 * POST  /batch : register the downloas in batch.
@@ -79,7 +71,7 @@ public class DownloadResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PostMapping("/batch")
+	/*@PostMapping("/batch")
 	public ResponseEntity<?> createInBatch(@Valid @RequestBody List<Download> downloads) {
 		logger.debug("REST request to save Downloads from list: {}", downloads);
 		
@@ -90,5 +82,5 @@ public class DownloadResource implements Serializable {
 				.body(created
 						.subscribe(System.out::println));
 		
-	}
+	}*/
 }

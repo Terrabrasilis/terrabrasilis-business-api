@@ -1,34 +1,24 @@
 package br.inpe.dpi.terrabrasilis.resource;
 
-import static br.inpe.dpi.terrabrasilis.util.Constants.*;
+import static br.inpe.dpi.terrabrasilis.util.Constants.API;
+import static br.inpe.dpi.terrabrasilis.util.Constants.CACHE_DEFORESTATION;
+import static br.inpe.dpi.terrabrasilis.util.Constants.V1;
+import static br.inpe.dpi.terrabrasilis.util.Constants.VISION_TO_VISION;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.inpe.dpi.terrabrasilis.domain.Vision;
 import br.inpe.dpi.terrabrasilis.domain.VisionDTO;
-import br.inpe.dpi.terrabrasilis.exception.VisionNotFoundException;
 import br.inpe.dpi.terrabrasilis.service.VisionService;
 import br.inpe.dpi.terrabrasilis.service.VisionToVisionService;
-import br.inpe.dpi.terrabrasilis.util.HeaderUtil;
-import org.springframework.cache.annotation.Cacheable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 /**
@@ -65,7 +55,7 @@ public class VisionToVisionResource implements Serializable {
 		return visionToVisionService.findById(id);
 	}
 	
-	@PostMapping
+	/*@PostMapping
 	@CachePut(CACHE_DEFORESTATION)
 	public ResponseEntity<Mono<VisionDTO>> createNewVisionDTO(@Valid @RequestBody VisionDTO vision) {
 		logger.debug("REST request to save VisionDTO : {}", vision);
@@ -75,7 +65,7 @@ public class VisionToVisionResource implements Serializable {
 		return ResponseEntity.ok()
 				.headers(HeaderUtil.createEntityCreationAlert("Vision", ""))
 				.body(created);
-	}
+	}*/
 	
 	/**
 	 * POST  /batch : register the visionDTO from list of VisionDTOs.
@@ -84,7 +74,7 @@ public class VisionToVisionResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PostMapping("/batch")
+	/*@PostMapping("/batch")
 	@CachePut(CACHE_DEFORESTATION)
 	public ResponseEntity<?> createInBatch(@Valid @RequestBody List<VisionDTO> visions) {
 		logger.debug("REST request to save VisionDTO from list: {}", visions);
@@ -95,7 +85,7 @@ public class VisionToVisionResource implements Serializable {
 				.headers(HeaderUtil.createEntityCreationAlert("VisionDTO", ""))
 				.body(created
 						.subscribe(System.out::println));
-	}
+	}*/
 	
 	/**
 	 * PUT  / : update the visionDTO object.
@@ -104,7 +94,7 @@ public class VisionToVisionResource implements Serializable {
 	 * 
 	 * @return 200 - OK
 	 */
-	@PutMapping
+	/*@PutMapping
 	@CachePut(CACHE_DEFORESTATION)
 	public Flux<ResponseEntity<VisionDTO>> updateVisionDTO(@Valid @RequestBody VisionDTO dto) {
 		logger.debug("REST request to save Vision : {}", dto);
@@ -121,5 +111,5 @@ public class VisionToVisionResource implements Serializable {
 				})
 				.map(updated -> new ResponseEntity<>(updated, HttpStatus.OK))
 				.defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
+	}*/
 }
